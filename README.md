@@ -60,32 +60,13 @@ O Nest fornece um nível de abstração acima desses Node.js comuns frameworks (
 ## 3. Diagrama de Classes
 
 ```
-@Entity({name: "tb_colaboradores"})
-
-export class Colaborador{
-
-    @PrimaryGeneratedColumn()
-    id: number;
-
-    @Transform(({ value }: TransformFnParams) => value?.trim())
-    @IsNotEmpty()
-    @Column({length: 100, nullable: false})
-    nome: string;
-
-    @Transform(({ value }: TransformFnParams) => value?.trim())
-    @IsNotEmpty()
-    @Column({length: 100, nullable: false})
-    cargo: string;
-
-    @Transform(({ value }: TransformFnParams) => value?.trim())
-    @IsNotEmpty()
-    @Column({nullable: false})
-    salario: number;
-
-    @CreateDateColumn()
-    data_admissao: Date;
-
-}
+tb_colaboradores
+class Colaboradores {
+  - nome : string;
+  - cargo: string;
+  - salario: number;
+  - data_admissao: Date;
+  }
 ```
 
 ------
